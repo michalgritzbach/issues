@@ -3,9 +3,11 @@ defmodule Issues.Mixfile do
 
   def project do
     [app: :issues,
-     escript: escript_config(),
      version: "0.1.0",
      elixir: "~> 1.4",
+     name: "Issues",
+     source_url: "https://github.com/michalgritzbach/issues",
+     escript: escript_config(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -31,7 +33,9 @@ defmodule Issues.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.11.2"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:ex_doc, "~> 0.15.1"},
+      {:earmark, "~> 1.2", override: true}
     ]
   end
 
